@@ -78,7 +78,9 @@ func (u *Users) Trade(amount float64, dst uint32) {
 
 }
 func WriteCSV(objMarket Marketplace) {
-	file, err := os.OpenFile("./result.csv", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	fmt.Println("otladka")
+	file, err := os.Create("results.csv")
+	fmt.Println(file)
 	if err != nil {
 		log.Panicln(err)
 	}
